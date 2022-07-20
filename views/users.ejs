@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
 
-    <% users.forEach((user) => { %>
-        <div>
-            <h1><%- user.name; %></h1>
-            <p><%- user.email; %></p>
-            <p><%- user.phone; %></p>
-        </div>
-    <% }) %>    
+    <%- include('partials/header.ejs')%>
 
+    <div class="container mt-50 main-card">
+        <% users.forEach((user) => { %>
+            <div class="card p-2 cards-t">
+                <div class="text-center">
+                    <img class="user-img" src="./img/elon.jfif" alt="">
+                </div>
+                <h1 class="text-center"><%- user.name; %></h1>
+                <p class="text-center"><%- user.email; %></p>
+                <p class="text-center"><%- user.phone; %></p>
+            </div>
+        <% }) %>    
+    </div>
 </body>
 </html>

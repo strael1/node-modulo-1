@@ -1,29 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <div>
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </div>
+<%- include('partials/header.ejs') %>
 
     <!-- <div>
         <h1><//%- title; %> </h1>
         <p>I am looking for a new <//%- apply; %> </p>
     </div> -->
 
-    <div>
-        <h1><%- title; %> </h1>
-        <p>I am looking for a new <%- apply; %></p>
-    </div>
+    <div class="container mt-50 main-card">
+        <% users.forEach((user) => { %>
+            <div class="card p-2 cards-t">
+                <div class="text-center">
+                    <img class="user-img" src="https://robohash.org/<%- user.id; %>?200x200" alt="">
+                </div>
+                <h1 class="text-center"><%- user.name; %></h1>
+                <p class="text-center"><%- user.email; %></p>
+                <p class="text-center"><%- user.phone; %></p>
+            </div>
+    <% }) %> 
 </body>
 </html>
